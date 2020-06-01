@@ -1,0 +1,22 @@
+// system file
+*.log
+.DS_Store*
+.idea/
+
+// specific files
+node_modules/
+src/
+test/
+# bin/
+CHANGELOG.md
+example/
+settings/
+demo/
+etc/
+.eslintrc
+tsconfig.json
+
+// setting files
+.babelrc
+.travis.yml
+.circleci/
