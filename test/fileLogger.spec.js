@@ -6,13 +6,6 @@ const LOGS_PATH = `${__dirname}/logs`;
 const logger = require('../lib');
 
 describe('FileLogger', () => {
-    after(() => {
-        fs.unlink(LOGS_PATH, (err) => {
-            if (err)
-                console.error(err);
-        });
-    });
-
     it('Should throw an error since there is no path to FileLogger', () => {
         expect(() => {
             logger.init([

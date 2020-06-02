@@ -1,5 +1,5 @@
 {
-  "name": "logger-js",
+  "name": "log-to-all",
   "version": "0.1.0",
   "description": "Easy logging in multi platforms",
   "main": "lib/index.js",
@@ -25,11 +25,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/idanavr/logger-js"
+    "url": "https://github.com/idanavr/log-to-all"
   },
   "keywords": [
     "logger",
     "log",
+    "logging",
     "js",
     "node",
     "console",

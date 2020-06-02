@@ -1,15 +1,16 @@
-# Logger-JS
+# Log-To-All
+[![NPM Version](https://img.shields.io/npm/v/log-to-all.svg?branch=master)](https://www.npmjs.com/package/log-to-all)
 
 ## Installation
 
 ```
-npm install logger-js
+npm install log-to-all
 ```
 
 or
 
 ```
-yarn add logger-js
+yarn add log-to-all
 ```
 
 ## Try it out to see how simple it is
@@ -20,9 +21,9 @@ yarn add logger-js
 This example use two of the implemented loggers:
 
 ``` js
-const ConsoleLogger = require('logger-js/defaultLoggers/console');
-const FileLogger = require('logger-js/defaultLoggers/file');
-const logger = require('logger-js').init([
+const ConsoleLogger = require('log-to-all/lib/defaultLoggers/console');
+const FileLogger = require('log-to-all/lib/defaultLoggers/file');
+const logger = require('log-to-all').init([
   new ConsoleLogger(),
   new FileLogger(`${__dirname}/logs`)
 ]);
@@ -36,8 +37,8 @@ console | Write the logs to the console
 file | Write the logs to files in the given path
 
 ``` js
-const ConsoleLogger = require('logger-js/defaultLoggers/console');
-const FileLogger = require('logger-js/defaultLoggers/file');
+const ConsoleLogger = require('log-to-all/defaultLoggers/console');
+const FileLogger = require('log-to-all/defaultLoggers/file');
 ```
 
 ## Add your own logger
@@ -50,7 +51,7 @@ In order to add your own logger all you have to do is to create new class with t
 Then add it to the array of init function like this:
 
 ``` js
-require('logger-js').init([
+require('log-to-all').init([
   new YourLogger()
 ]);
 ```
