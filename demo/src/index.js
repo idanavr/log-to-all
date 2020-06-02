@@ -1,6 +1,6 @@
-const ConsoleLogger = require('../../src/defaultLoggers/console');
-const FileLogger = require('../../src/defaultLoggers/file');
-const logger = require('../../src').init([
+const ConsoleLogger = require('../../lib/defaultLoggers/console');
+const FileLogger = require('../../lib/defaultLoggers/file');
+const logger = require('../../lib').init([
   new ConsoleLogger(),
   new FileLogger(`${__dirname}/../logs`)
 ]);

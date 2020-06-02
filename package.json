@@ -2,13 +2,13 @@
   "name": "logger-js",
   "version": "0.1.0",
   "description": "Easy logging in multi platforms",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "npm-run-all --parallel develop *:watch",
     "develop": "nodemon ./demo/src",
     "test": "mocha --exit test/**/*.spec.js",
     "test:watch": "mocha test/**/*.spec.js -- --watch",
-    "lint": "esw src",
+    "lint": "esw lib",
     "lint:watch": "npm run lint -- --watch"
   },
   "dependencies": {},

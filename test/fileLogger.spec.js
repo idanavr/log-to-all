@@ -1,9 +1,9 @@
 /* eslint no-undef: 0 */
 const { expect } = require('chai');
 const fs = require('fs');
-const FileLogger = require('../src/defaultLoggers/file');
+const FileLogger = require('../lib/defaultLoggers/file');
 const LOGS_PATH = `${__dirname}/logs`;
-const logger = require('../src');
+const logger = require('../lib');
 
 describe('FileLogger', () => {
     after(() => {
