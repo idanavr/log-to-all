@@ -1,6 +1,6 @@
 {
   "name": "log-to-all",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easy logging in multi platforms",
   "main": "lib/index.js",
   "scripts": {
