@@ -7,6 +7,6 @@ const logger = require('../../lib').init([
 
 logger.info('info test');
 logger.warn('warn test');
-logger.error('error test');
+logger.error(new Error('error test'));
 
 require('./anotherFile');

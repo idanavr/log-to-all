@@ -27,6 +27,7 @@ const logger = require('log-to-all').init([
   new ConsoleLogger(),
   new FileLogger(`${__dirname}/logs`)
 ]);
+logger.info('♫♪♫♪!');
 ```
 
 ## Implemented Loggers
@@ -36,9 +37,11 @@ Name| Description
 console | Write the logs to the console
 file | Write the logs to files in the given path
 
+&nbsp;
+
 ``` js
-const ConsoleLogger = require('log-to-all/defaultLoggers/console');
-const FileLogger = require('log-to-all/defaultLoggers/file');
+const ConsoleLogger = require('log-to-all/lib/defaultLoggers/console');
+const FileLogger = require('log-to-all/lib/defaultLoggers/file');
 ```
 
 ## Add your own logger
