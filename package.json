@@ -1,7 +1,7 @@
 {
   "name": "log-to-all",
   "version": "0.1.1",
-  "description": "Easy logging in multi platforms",
+  "description": "Combine a few loggers into one",
   "main": "lib/index.js",
   "scripts": {
     "start": "npm-run-all --parallel develop *:watch",
@@ -32,8 +32,9 @@
     "log",
     "logging",
     "js",
-    "node",
+    "nodejs",
     "console",
-    "file"
+    "file",
+    "dynamic"
   ]
 }

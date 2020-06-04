@@ -1,5 +1,7 @@
 # Log-To-All
 [![NPM Version](https://img.shields.io/npm/v/log-to-all.svg?branch=master)](https://www.npmjs.com/package/log-to-all)
+[![CircleCI Status](https://circleci.com/gh/idanavr/log-to-all/tree/master.svg?style=svg)](https://circleci.com/gh/idanavr/log-to-all/tree/master)
+
 
 ## Installation
 

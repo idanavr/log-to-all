@@ -14,31 +14,45 @@ describe('FileLogger', () => {
         }).to.throw();
     });
 
+    const fileLogger = new FileLogger(LOGS_PATH);
     logger.init([
-        new FileLogger(LOGS_PATH)
+        fileLogger
     ]);
 
     describe('info', () => {
-        const type = 'info';
-        it(`Should insert '${type}' log in a file`, () => {
-            logger[type]('random message');
-            expect(fs.existsSync(LOGS_PATH)).to.be.eql(true);
+        it(`Should insert '[Info]' log in the log file`, (done) => {
+            testLogType('info', '[Info]').then(() => {
+                done();
+            });
         });
     });
 
     describe('warn', () => {
-        const type = 'warn';
-        it(`Should insert '${type}' log in a file`, () => {
-            logger[type]('random message');
-            expect(fs.existsSync(LOGS_PATH)).to.be.eql(true);
+        it(`Should insert '[Warn]' log in the log file`, (done) => {
+            testLogType('warn', '[Warn]').then(() => {
+                done();
+            });
         });
     });
 
     describe('error', () => {
-        const type = 'error';
-        it(`Should insert '${type}' log in a file`, () => {
-            logger[type]('random message');
-            expect(fs.existsSync(LOGS_PATH)).to.be.eql(true);
+        it(`Should insert '[Error]' log in the log file`, (done) => {
+            testLogType('error', '[Error]').then(() => {
+                done();
+            });
         });
     });
+
+    after(() => {
+        fs.unlinkSync(fileLogger.getCurrentFilePath());
+    });
+
+    function testLogType(type, insertedText) {
+        const loggersResult = logger[type]('random message');
+        return Promise.all(Object.values(loggersResult)).then((res) => {
+            const filePath = res[0];
+            expect(fs.existsSync(filePath)).to.be.eql(true);
+            expect(fs.readFileSync(filePath, { encoding: 'utf-8' })).to.include(insertedText);
+        });
+    }
 });
