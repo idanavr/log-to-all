@@ -8,14 +8,15 @@
     "develop": "nodemon ./demo/src",
     "test": "mocha --exit test/**/*.spec.js",
     "test:watch": "mocha test/**/*.spec.js -- --watch",
-    "lint": "esw lib",
+    "lint": "esw .",
     "lint:watch": "npm run lint -- --watch"
   },
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
-    "eslint": "^7.1.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-mocha": "^7.0.1",
     "eslint-watch": "^7.0.0",
     "mocha": "^7.2.0",
     "nodemon": "^2.0.4",

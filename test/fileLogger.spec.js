@@ -1,49 +1,57 @@
-/* eslint no-undef: 0 */
+/* eslint func-names: 0 prefer-arrow-callback: 0 */
 const { expect } = require('chai');
 const fs = require('fs');
+const logger = require('../lib');
 const FileLogger = require('../lib/defaultLoggers/file');
 const LOGS_PATH = `${__dirname}/logs`;
-const logger = require('../lib');
+const fileLogger = new FileLogger(LOGS_PATH);
 
-describe('FileLogger', () => {
-    it('Should throw an error since there is no path to FileLogger', () => {
+describe('FileLogger', function () {
+    it('Initialize FileLogger with no path, should throw an error', function () {
         expect(() => {
             logger.init([
                 new FileLogger()
-            ])
+            ]);
         }).to.throw();
     });
 
-    const fileLogger = new FileLogger(LOGS_PATH);
-    logger.init([
-        fileLogger
-    ]);
+    describe('info', function () {
+        it('Should insert "[Info]" log in the log file', function (done) {
+            logger.init([
+                fileLogger
+            ]);
 
-    describe('info', () => {
-        it(`Should insert '[Info]' log in the log file`, (done) => {
             testLogType('info', '[Info]').then(() => {
                 done();
             });
         });
     });
 
-    describe('warn', () => {
-        it(`Should insert '[Warn]' log in the log file`, (done) => {
+    describe('warn', function () {
+        it('Should insert "[Warn]" log in the log file', function (done) {
+            logger.init([
+                fileLogger
+            ]);
+
             testLogType('warn', '[Warn]').then(() => {
                 done();
             });
         });
     });
 
-    describe('error', () => {
-        it(`Should insert '[Error]' log in the log file`, (done) => {
+    describe('error', function () {
+        it('Should insert "[Error]" log in the log file', function (done) {
+            logger.init([
+                fileLogger
+            ]);
+
             testLogType('error', '[Error]').then(() => {
                 done();
             });
         });
     });
 
-    after(() => {
+    after(function () {
         fs.unlinkSync(fileLogger.getCurrentFilePath());
     });
 
