@@ -1,4 +1,3 @@
-/* eslint func-names: 0 prefer-arrow-callback: 0 */
 const { expect } = require('chai');
 const fs = require('fs');
 const logger = require('../lib');

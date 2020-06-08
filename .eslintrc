@@ -5,6 +5,7 @@
     ],
     "extends": [
         "eslint:recommended",
+        "plugin:node/recommended",
         "plugin:mocha/recommended"
     ],
     "parser": "babel-eslint",
@@ -256,19 +257,12 @@
     "overrides": [
         {
             "files": [
-                "*.test.js"
+                "*.spec.js"
             ],
             "rules": {
-                "no-undef": "off",
-                "func-names": "off"
-            }
-        },
-        {
-            "files": [
-                "*.reducer.js"
-            ],
-            "rules": {
-                "func-names": "off"
+                "func-names": "off",
+                "prefer-arrow-callback": "off",
+                "node/no-unpublished-require": "off",
             }
         }
     ]
