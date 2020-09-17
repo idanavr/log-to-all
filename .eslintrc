@@ -263,6 +263,7 @@
                 "func-names": "off",
                 "prefer-arrow-callback": "off",
                 "node/no-unpublished-require": "off",
+                "no-unused-expressions": "off"
             }
         }
     ]

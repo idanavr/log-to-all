@@ -5,8 +5,10 @@ const logger = require('../../lib').init([
   new FileLogger(`${__dirname}/../logs`)
 ]);
 
+logger.debug('debug test');
 logger.info('info test');
 logger.warn('warn test');
 logger.error(new Error('error test'));
 
 require('./anotherFile');
+require('./debugFile');
