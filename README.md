@@ -30,6 +30,10 @@ const logger = require('log-to-all').init([
   new FileLogger(`${__dirname}/logs`)
 ]);
 logger.info('♫♪♫♪!');
+
+logger.debug('Will not be logged.');
+logger.setDebugMode(true);
+logger.debug('Now it will be logged.');
 ```
 
 ## Implemented Loggers
@@ -49,13 +53,23 @@ const FileLogger = require('log-to-all/lib/defaultLoggers/file');
 ## Add your own logger
 In order to add your own logger all you have to do is to create new class with the functions:
 
-- Info(msg, params)
-- Warn(msg, params)
-- Error(msg, params)
+- debug(msg, params) - Will log only if debug mode set to true.
+- info(msg, params)
+- warn(msg, params)
+- error(msg, params)
+
+It is recommended to use our base logger in order to make sure everything is implemented:
+
+``` js
+const baseLogger = require("log-to-all/lib/logger");
+class YourLogger extends baseLogger {
+}
+```
 
 Then add it to the array of init function like this:
 
 ``` js
+const YourLogger = require('./YourLoggerPath');
 require('log-to-all').init([
   new YourLogger()
 ]);

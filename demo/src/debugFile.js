@@ -1,9 +1,6 @@
-const ConsoleLogger = require('../../lib/defaultLoggers/console');
-const FileLogger = require('../../lib/defaultLoggers/file');
+const logger = require('../../lib');
 
-const logger = require('../../lib').init([
-    new ConsoleLogger(),
-    new FileLogger(`${__dirname}/../logs`)
-], true);
-
-logger.debug('debugFile is working');
+logger.setDebugMode(true);
+logger.debug('debugFile - debug is working');
+logger.setDebugMode(false);
+logger.debug('debugFile - this will not be logged since debug mode is now false');
